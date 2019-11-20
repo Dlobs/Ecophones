@@ -1,0 +1,8 @@
+.headerwrap {
+	display:grid;
+	grid-template-columns:repeat(8, 1fr);
+	grid-template-rows:1fr 4fr;
+	grid-gap:2rem;
+	scroll-behavior:smooth;
+	height:100vh;
+}

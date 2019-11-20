@@ -1,0 +1,184 @@
+
+.ecophone1 {
+	scroll-behavior:smooth;
+display: grid;
+grid-column:3 / span 7;
+grid-row:1 / span 3;
+
+}
+main {
+	scroll-behavior:smooth;
+  display: grid;
+  padding: 1.5rem;
+  @media screen and (min-width: 40em){
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: 2fr 1fr 3fr 1fr 2fr;
+    height: 100vh;
+    padding: 0;
+  }
+  .tomato {
+    @media screen and (min-width: 40em){
+      grid-column: 1;
+      grid-row: 2 / span 3;
+    }
+  }
+  .avocado {
+    @media screen and (min-width: 40em){
+      grid-column: 3 / span 4;
+      grid-row: 3;
+      z-index: 1;
+    }
+  }
+  .toast {
+    @media screen and (min-width: 40em){
+      grid-column: 4 / span 6;
+      grid-row: 2 / span 3;
+      z-index: 0;
+    }
+  }
+  aside {
+    grid-row: 5;
+    margin-bottom: 1.5rem;
+    @media screen and (min-width: 40em){
+      grid-column: 10;
+      grid-row: 1;
+      display: grid; // sub grid to align text
+      margin-bottom: 0;
+    }
+    p {
+      padding: 1rem;
+      @media screen and (min-width: 40em){
+        align-self: center;
+      }
+    }
+  }
+  h1 {
+    @media screen and (min-width: 40em){
+      grid-column: 2 / span 7;
+      grid-row: 3;
+      align-self: center;
+      z-index: 2;
+    }
+  }
+  .foreal {
+    @media screen and (min-width: 40em){
+      grid-column: 2;
+      grid-row: 5;
+      display: grid; // sub grid to align text
+    }
+    a {
+      @media screen and (min-width: 40em){
+        align-self: center;
+        justify-self: center;
+      }
+    }
+  }
+  .bling {
+    @media screen and (min-width: 40em){
+      grid-row: 1;
+      grid-column: 2 / span 2;
+    }
+  }
+  .blung {
+    @media screen and (min-width: 40em){
+      grid-row: 5;
+      grid-column: 10;
+    }
+  }
+}
+
+/* SIMPLE STYLING */
+
+$svgfill: #67a134;
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  figure {
+    margin: 0 0 1rem;
+    @media screen and (min-width: 40em){
+      margin-bottom: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h1 {
+    margin: 0 0 1rem;
+    padding: 1.5rem 0 .25rem;
+    	font-family: 'Supermercado One', cursive,;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    color: green;
+    background-color: #fff;
+    opacity:(.8);
+    span {
+      display: inline-block;
+      transform: rotate(180deg) translateY(35%);
+    }
+    @media screen and (min-width: 40em){
+      font-size: 3rem;
+      margin: 0;
+    }
+    @media screen and (min-width: 64em){
+      font-size: 4rem;
+    }
+  }
+  aside {
+    background-color: green;
+    padding: 0 1rem;
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
+      font-family: 'Supermercado One', cursive,;
+      font-size: .875rem;
+      text-align: center;
+      @media screen and (min-width: 40em){
+        text-align: left;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #f8b852;
+      }
+    }
+  }
+  .foreal {
+    border-bottom: 1rem solid #67a134;
+    text-align: center;
+    @media screen and (min-width: 64em){
+      text-align: left;
+    }
+    svg {
+      width: 1.5rem;
+      fill: #67a134;
+      margin-bottom: 1.5rem;
+      @media screen and (min-width: 40em){
+        margin-bottom: 0;
+        animation-name: anim;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      transition: fill .2s;
+      &:hover {
+        fill: lighten($svgfill,20%);
+      }
+    }
+  }
+  
+}
+
+@keyframes anim {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
